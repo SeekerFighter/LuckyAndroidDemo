@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TabSegment">
+
+        <attr name="tabTextSize"/>
+        <attr name="tabTextCheckedColor"/>
+        <attr name="tabTextNormalColor"/>
+        <attr name="tabIconSize" format="dimension"/>
+        <attr name="tabInnerSpace" format="dimension"/>
+
+    </declare-styleable>
+
+</resources>

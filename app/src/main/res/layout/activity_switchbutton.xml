@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp">
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:id="@+id/switch_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp" />
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:sb_checked="true" />
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:sb_shadowEffect="false"
+        app:sb_checked="false" />
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:sb_showIndicator="true" />
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:sb_trackCheckedColor="#fdc951" />
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:layout_width="60dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        app:sb_showIndicator="true"
+        app:sb_background="#FFF"
+        app:sb_thumbColor="#db99c7"
+        app:sb_checkLineColor="#a5dc88"
+        app:sb_trackCheckedColor="#A36F95"
+        app:sb_shadowColor="#A36F95"
+        app:sb_uncheckCircleColor="#A36F95" />
+
+    <com.seeker.lucky.widget.SwitchButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:sb_enableEffect="false" />
+
+</LinearLayout>

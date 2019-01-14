@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MemberView">
+
+        <attr name="coreIconRes" format="reference" /><!--图标显示-->
+        <attr name="coreIconWidth" format="dimension" /><!--图标宽-->
+        <attr name="coreIconHeight" format="dimension" /><!--图标高-->
+
+        <attr name="coreTextRes" format="string" /><!--主要说明文字，当前的功能性描述，比如：设置-->
+        <attr name="coreTextColor" format="color" />
+        <attr name="coreTextSize" format="dimension" />
+        <attr name="coreTextMarginStart" format="dimension" />
+        <attr name="coreTextMarginEnd" format="dimension" />
+
+        <attr name="subTextRes" format="string" /><!--主要说明文字，当前的功能性描述，比如：设置-->
+        <attr name="subTextColor" format="color" />
+        <attr name="subTextSize" format="dimension" />
+        <attr name="subTextMarginEnd" format="dimension" />
+
+        <attr name="coreType" format="enum">
+            <enum name="custom" value="0" /><!--结尾没东西-->
+            <enum name="arrow" value="1" /><!--可添加补充性文字在前面-->
+            <enum name="switcher" value="2" />
+            <enum name="checkBox" value="3" />
+            <enum name="image" value="4" />
+        </attr>
+
+        <attr name="coreTypeWidth" format="dimension" />
+        <attr name="coreTypeHeight" format="dimension" />
+
+        <attr name="arrowRes" format="reference" />
+
+        <attr name="switchTrackRes" format="reference" />
+        <attr name="switchThumbRes" format="reference" />
+
+        <attr name="checkboxRes" format="reference" /><!--CheckBox.setBackground(checkboxRes)-->
+        <attr name="isChecked" format="boolean" />
+
+        <attr name="imageRes" format="reference" />
+
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:gravity="center_horizontal">
+
+    <com.seeker.lucky.widget.InputBox
+        android:id="@+id/inputBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:boxCount="6"
+        app:boxWidth="30dp"
+        app:boxHeight="30dp"
+        app:boxSpace="10dp"
+        app:boxRadius="3dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeInputingColor="#FA8C23"
+        app:boxStrokeNormalColor="#C4C4C4"
+        app:boxCharAllCaps="true"
+        app:boxCharDisplay="true"
+        android:inputType="textPassword"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/getCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="获取输入数据"/>
+
+    <Button
+        android:id="@+id/display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="明文显示"/>
+
+</LinearLayout>

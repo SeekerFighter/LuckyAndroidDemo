@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.seeker.lucky">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".activity.MemberViewActivity"
+            android:label="MemberViewDemo" />
+
+        <activity
+            android:name=".activity.LuckyRecycleViewActivity"
+            android:label="点击、长按、左滑" />
+
+        <activity
+            android:name=".activity.InputBoxActivity"
+            android:label="输入框用例" />
+
+        <activity
+            android:name=".activity.CheckedTableViewActivity"
+            android:label="CheckedTableViewDemo" />
+
+        <activity
+            android:name=".activity.SwitchButtonActivity"
+            android:label="SwitchButtonDemo" />
+
+        <activity
+            android:name=".activity.RoundImageViewActivity"
+            android:label="RoundImageViewDemo" />
+
+        <activity
+            android:name=".activity.DrawableHelperActivity"
+            android:label="DrawableHelperDemo" />
+
+        <activity android:name=".activity.TabSegmentActivity"
+            android:label="TabSegmentDemo"
+            />
+
+    </application>
+
+</manifest>

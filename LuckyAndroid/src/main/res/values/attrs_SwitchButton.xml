@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwitchButton">
+
+        <attr name="sb_checked" format="reference|boolean" /><!--是否选中，默认false-->
+        <attr name="sb_thumbColor" format="reference|color" /><!--按钮颜色-->
+        <attr name="sb_trackNormalColor" format="reference|color" /><!--关闭颜色-->
+        <attr name="sb_trackCheckedColor" format="reference|color" /><!--开启颜色-->
+        <attr name="sb_borderWidth" format="reference|dimension" /><!--边框宽度-->
+        <attr name="sb_background" format="reference|color" /><!--背景色，默认白色-->
+
+        <attr name="sb_shadowEffect" format="reference|boolean" /><!--是否启用阴影,默认true-->
+        <attr name="sb_shadowRadius" format="reference|dimension" /><!--阴影半径-->
+        <attr name="sb_shadowOffset" format="reference|dimension" /><!--阴影偏移-->
+        <attr name="sb_shadowColor" format="reference|color" /><!--阴影颜色-->
+
+        <attr name="sb_showIndicator" format="reference|boolean" /><!--是否显示指示器，默认false：不显示-->
+        <attr name="sb_checkLineColor" format="reference|color" /><!--开启指示器颜色-->
+        <attr name="sb_checkLineWidth" format="reference|dimension" /><!--开启指示器线宽-->
+        <attr name="sb_uncheckCircleColor" format="reference|color" /><!--关闭指示器颜色-->
+        <attr name="sb_uncheckCircleWidth" format="reference|dimension" /><!--关闭指示器线宽-->
+        <attr name="sb_uncheckCircleRadius" format="reference|dimension" /><!--关闭指示器半径-->
+
+        <attr name="sb_effectDuration" format="reference|integer" /><!--动画时间，默认300ms-->
+        <attr name="sb_enableEffect" format="reference|boolean" /><!-- 是否启用特效，默认true-->
+
+    </declare-styleable>
+
+</resources>

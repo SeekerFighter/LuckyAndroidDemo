@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundImageView">
+
+        <attr name="riv_borderWidth" format="dimension" />
+        <attr name="riv_borderColor" format="color" />
+        <attr name="riv_selectedMaskColor" format="color" />
+        <attr name="riv_selectedBorderColor" format="color" />
+        <attr name="riv_selectedBorderWidth" format="dimension" />
+        <attr name="riv_cornerRadius" format="dimension" />
+        <attr name="riv_isOval" format="boolean" />
+        <attr name="riv_isCircle" format="boolean" />
+        <attr name="riv_isTouchSelectModeEnabled" format="boolean" />
+
+    </declare-styleable>
+
+</resources>

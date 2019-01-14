@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/rect_back_white">
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:layout_gravity="center"
+            android:text="我是标题"/>
+
+    <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="350dp"
+            android:minWidth="256dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="#5a5a5a"
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp"
+            android:text="我是提示内容"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@null">
+
+        <Button
+                android:id="@+id/negativeBtn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_selector_color"
+                android:textSize="17sp"
+                android:background="@drawable/bg_btn_match_leftbottom"
+                android:text="取消"/>
+
+        <Button
+                android:id="@+id/positiveBtn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@drawable/text_selector_color"
+                android:textSize="17sp"
+                android:background="@drawable/bg_btn_match_rightbottom"
+                android:text="确定"/>
+
+    </LinearLayout>
+
+</LinearLayout>

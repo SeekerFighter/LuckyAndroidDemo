@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CheckedTableView">
+        <attr name="tabStrokeWidth" format="dimension" />
+        <attr name="tabStrokeColor" format="color" />
+        <attr name="tabCheckedColor" format="color" />
+        <attr name="tabPressedColor" format="color" />
+        <attr name="tabNormalColor" format="color" />
+        <attr name="tabTextSize"/>
+        <attr name="tabCornerRadius" format="dimension" />
+        <attr name="tabTextArray" format="reference" />
+        <attr name="tabTextCheckedColor"/>
+        <attr name="tabTextNormalColor"/>
+        <attr name="tabItemWidth" format="dimension" />
+        <attr name="tabItemHeight" format="dimension" />
+    </declare-styleable>
+</resources>

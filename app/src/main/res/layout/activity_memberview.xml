@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F4FB"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.seeker.lucky.memberview.MemberView
+        style="@style/MemberViewStyle"
+        app:coreTextRes="只有抬头文字" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        style="@style/MemberViewStyle"
+        app:coreTextRes="应用图标"
+        app:coreType="image"
+        app:coreTypeHeight="30dp"
+        app:coreTypeWidth="30dp"
+        app:imageRes="@mipmap/ic_launcher"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        style="@style/MemberViewStyle"
+        app:coreTextRes="应用版本"
+        app:subTextRes="V1.0.0"
+        app:subTextColor="@android:color/darker_gray"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        style="@style/MemberViewWithIconStyle"
+        app:coreTextRes="抬头文和抬头icon" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        android:id="@+id/nextCell"
+        style="@style/MemberViewWithIconStyle"
+        app:coreTextRes="我是arrow"
+        app:coreType="arrow" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        android:id="@+id/switcherCell"
+        style="@style/MemberViewWithIconStyle"
+        app:coreTextRes="我是switcher"
+        app:coreType="switcher" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        android:id="@+id/checkboxCell"
+        style="@style/MemberViewWithIconStyle"
+        app:coreTextRes="我是checkBox"
+        app:coreType="checkBox" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.33dp" />
+
+    <com.seeker.lucky.memberview.MemberView
+        android:id="@+id/customCell"
+        style="@style/MemberViewWithIconStyle"
+        app:coreTextRes="自定义Switch布局"
+        app:coreType="custom"
+        app:subTextRes="V1.0.0"
+        app:subTextColor="@android:color/darker_gray"
+        app:subTextMarginEnd="10dp">
+
+        <com.seeker.lucky.widget.SwitchButton
+            android:id="@+id/switchButton"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            app:sb_checked="true"/>
+
+    </com.seeker.lucky.memberview.MemberView>
+
+</LinearLayout>

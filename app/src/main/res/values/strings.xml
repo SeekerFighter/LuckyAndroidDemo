@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LuckyAndroidDemo</string>
+
+
+    <string-array name="demoTab">
+        <item>新闻</item>
+        <item>音乐</item>
+        <item>游戏</item>
+        <item>体育</item>
+    </string-array>
+
+</resources>

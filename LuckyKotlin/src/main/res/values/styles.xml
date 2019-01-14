@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>//是否浮现在activity之上
+        <item name="android:windowIsTranslucent">false</item>//是否半透明
+        <item name="android:windowNoTitle">true</item>//是否显示title标题
+        <item name="android:windowFrame">@null</item>//设置windowFrame框
+        <item name="android:windowFullscreen">false</item>//是否全屏显示
+        <item name="android:windowBackground">@android:color/transparent</item>//设置dialog的背景
+        <item name="android:windowAnimationStyle">@style/DialogAnims</item>//设置窗口动画效果
+        <item name="android:backgroundDimEnabled">true</item>//背景是否变暗
+        <item name="android:backgroundDimAmount">0.5</item>//设置背景变暗程度
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="DialogAnims">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>//进入动画
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>//退出动画
+    </style>
+
+</resources>

@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.android.COMPILE_SDK_VERSION
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.MIN_SDK_VERSION
+        targetSdkVersion rootProject.ext.android.TARGET_SDK_VERSION
+        versionCode rootProject.ext.android.VERSIONCODE
+        versionName rootProject.ext.android.VERSIONNAME
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //@Parcelize标记需要设置experimental = true
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.dependencies["appcompat-androidx"]
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //kotlin协程代码库
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.27.0-eap13'
+    //Retrofit相关
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //RxJava相关
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    api 'io.reactivex.rxjava2:rxjava:2.2.3'
+    //此处可换成'io.reactivex.rxjava2:rxkotlin:2.1.0'
+    //
+    //    //RxLifecycle相关，暂不没深究为啥影响编译，后续再看
+    //    implementation 'com.trello.rxlifecycle3:rxlifecycle-kotlin:3.0.0'
+    //    implementation 'com.trello.rxlifecycle3:rxlifecycle-components:3.0.0'
+    api project(':LuckyAndroid')
+}

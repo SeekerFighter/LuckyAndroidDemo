@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InputBox">
+        <attr name="boxCount" format="integer"/><!--输入框个数-->
+        <attr name="boxWidth" format="dimension"/><!--单个输入框的宽度-->
+        <attr name="boxHeight" format="dimension"/><!--单个输入框的高度-->
+        <attr name="boxRadius" format="dimension"/><!--圆角-->
+        <attr name="boxSpace" format="dimension"/><!--输入框之间的距离,大于等于0必须的-->
+        <attr name="boxStrokeWidth" format="dimension"/><!--输入框边线宽度-->
+        <attr name="boxStrokeNormalColor" format="color"/><!--边线颜色-->
+        <attr name="boxStrokeInputingColor" format="color"/><!--等待输入的边线颜色-->
+        <attr name="boxCharAllCaps" format="boolean"/><!--是否全部转换成大写-->
+        <attr name="boxCharDisplay" format="boolean"/><!--是否明文显示-->
+        <attr name="boxReplaceChar" format="string"/><!--不是明文显示的时候显示的字符-->
+    </declare-styleable>
+
+</resources>
