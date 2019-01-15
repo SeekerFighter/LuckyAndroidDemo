@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment
 /**
  *@author  Seeker
  *@date    2018/11/12/012  15:57
- *@describe 基于 kotlin的 LuckyFragment
+ *@describe 基于 kotlin的 LuckyFragment,懒加载以及界面可见不可见回调
  */
-abstract class LuckyFragment : Fragment(), UIHelper {
+abstract class LuckyFragment : Fragment(), LuckyUIHelper {
 
-    lateinit var mHostActivity: LuckyFragmentActivity
+    var mHostActivity: LuckyFragmentActivity? = null
 
     var mWho: Long = 0
 
@@ -46,9 +46,14 @@ abstract class LuckyFragment : Fragment(), UIHelper {
         mHostActivity = context as LuckyFragmentActivity
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        mHostActivity = null
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        todoWork()
+        onViewCreated(view)
     }
 
     /**

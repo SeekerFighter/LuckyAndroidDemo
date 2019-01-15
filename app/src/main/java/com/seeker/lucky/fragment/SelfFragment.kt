@@ -1,5 +1,6 @@
 package com.seeker.lucky.fragment
 
+import android.view.View
 import com.seeker.lucky.R
 import com.seeker.lucky.app.LuckyFragment
 import kotlinx.android.synthetic.main.fragment_tab.*
@@ -21,7 +22,7 @@ class SelfFragment : LuckyFragment(){
 
     }
 
-    override fun todoWork() {
+    override fun onViewCreated(contentView: View) {
         
     }
 }

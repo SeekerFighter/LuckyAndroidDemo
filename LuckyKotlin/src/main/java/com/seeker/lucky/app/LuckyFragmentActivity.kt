@@ -3,11 +3,12 @@ package com.seeker.lucky.app
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.collection.SparseArrayCompat
 import com.seeker.lucky.extensions.checkForValidMessageWhat
-import com.seeker.lucky.extensions.displayFragment
+import com.seeker.lucky.extensions.displayFragmentAndHideCurrent
 import com.seeker.lucky.extensions.findFragmentByWho
 import java.lang.ref.WeakReference
 
@@ -16,7 +17,7 @@ import java.lang.ref.WeakReference
  *@date    2018/11/12/012  10:29
  *@describe 基于 kotlin的 LuckyFragmentActivity
  */
-abstract class LuckyFragmentActivity : AppCompatActivity(), UIHelper {
+abstract class LuckyFragmentActivity : AppCompatActivity(), LuckyUIHelper {
 
     companion object {
         private const val MAX_NUM_PENDING_FRAGMENT_MESSAGES: Int = 0xfff - 1
@@ -43,8 +44,9 @@ abstract class LuckyFragmentActivity : AppCompatActivity(), UIHelper {
         super.onCreate(savedInstanceState)
         mActivity = this
         init()
-        setContentView(layoutResId())
-        todoWork()
+        val view = LayoutInflater.from(this).inflate(layoutResId(),null);
+        setContentView(view)
+        onViewCreated(view)
     }
 
     private fun init() {
@@ -67,13 +69,12 @@ abstract class LuckyFragmentActivity : AppCompatActivity(), UIHelper {
         mHandler?.removeCallbacksAndMessages(null)
     }
 
-    open fun fragmentContainerId(): Int = -1
-
     /**
      * 显示一个LuckyFragment
      */
-    fun displayFragment(fragment: LuckyFragment, tag: String? = fragment.javaClass.name) {
-        currentFragment = displayFragment(fragment, fragmentContainerId(), tag = tag, preFragment = currentFragment)
+    fun displayFragment(fragment: LuckyFragment, tag: String = fragment.javaClass.name) {
+        supportFragmentManager.displayFragmentAndHideCurrent(fragment,fragmentContainerId(),tag = tag,currentFragment = currentFragment)
+        this.currentFragment = fragment
     }
 
     /**

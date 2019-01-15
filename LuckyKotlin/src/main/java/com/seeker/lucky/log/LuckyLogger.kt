@@ -17,22 +17,22 @@ object LuckyLogger {
     private val LINE_SEP: String? = System.getProperty("line.separator");
 
     @JvmOverloads
-    fun v(tag: String? = null,msg: String) = print2Console(Log.VERBOSE, tag, msg)
+    fun v(tag: String? = null,msg: String?) = print2Console(Log.VERBOSE, tag, msg)
 
     @JvmOverloads
-    fun d(tag: String? = null,msg: String) = print2Console(Log.DEBUG, tag, msg)
+    fun d(tag: String? = null,msg: String?) = print2Console(Log.DEBUG, tag, msg)
 
     @JvmOverloads
-    fun i(tag: String? = null,msg: String) = print2Console(Log.INFO, tag, msg)
+    fun i(tag: String? = null,msg: String?) = print2Console(Log.INFO, tag, msg)
 
     @JvmOverloads
-    fun w(tag: String? = null,msg: String) = print2Console(Log.WARN, tag, msg)
+    fun w(tag: String? = null,msg: String?) = print2Console(Log.WARN, tag, msg)
 
     @JvmOverloads
-    fun e(tag: String? = null,msg: String, throwable: Throwable? = null) =
+    fun e(tag: String? = null,msg: String?, throwable: Throwable? = null) =
         print2Console(Log.ERROR, tag, msg, throwable)
 
-    private fun print2Console(priority: Int, tag: String?, msg: String, throwable: Throwable? = null) {
+    private fun print2Console(priority: Int, tag: String?, msg: String?, throwable: Throwable? = null) {
         val contender = StringBuffer()
         contender.append(msg).append(LINE_SEP)
         throwable?.let {

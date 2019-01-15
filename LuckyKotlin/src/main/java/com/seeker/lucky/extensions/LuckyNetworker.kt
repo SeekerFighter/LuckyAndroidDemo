@@ -1,5 +1,5 @@
 @file:JvmMultifileClass
-@file:JvmName("NetWorkerKt")
+@file:JvmName("LuckyNetWorker")
 
 package com.seeker.lucky.extensions
 

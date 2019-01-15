@@ -1,5 +1,5 @@
 @file:JvmMultifileClass
-@file:JvmName("ContextKt")
+@file:JvmName("LuckyContext")
 
 package com.seeker.lucky.extensions
 
@@ -11,11 +11,9 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
-import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.seeker.lucky.toast.ToastCompat
+import com.seeker.lucky.toast.LuckyToast
 import java.io.File
 
 /**
@@ -29,7 +27,7 @@ import java.io.File
  */
 @JvmOverloads
 fun Context.makeToast(message: CharSequence?, duration: Int = Toast.LENGTH_SHORT) =
-    ToastCompat.makeToast(this, message, duration)
+    LuckyToast.makeToast(this, message, duration)
 
 /**
  * 应用内单进程广播,效率高
@@ -87,6 +85,7 @@ fun Context.versionName(): String = packageInfo()?.versionName ?: ""
 /**
  * 获取应用名称
  */
+@JvmOverloads
 fun Context.appLabel(defName: String = ""):String = try {
     resources.getString(packageInfo()?.applicationInfo?.labelRes?:0)
 }catch (e:Exception){
@@ -97,6 +96,7 @@ fun Context.appLabel(defName: String = ""):String = try {
  * 保存信息到 sharedPreferences
  */
 @Throws(IllegalArgumentException::class)
+@JvmOverloads
 fun <T>Context.putToSharedPreferences(
     key: String,
     value: T,
@@ -118,6 +118,7 @@ fun <T>Context.putToSharedPreferences(
  */
 @Suppress("IMPLICIT_CAST_TO_ANY", "UNCHECKED_CAST")
 @Throws(ClassCastException::class, IllegalArgumentException::class)
+@JvmOverloads
 fun <T>Context.getFromSharedPreferences(
     key: String,
     defaultValue: T,
@@ -147,6 +148,7 @@ fun Context.installApk(apkFile:File){
 /**
  * 启动一个activity
  */
+@JvmOverloads
 fun <Activity>Context.startActivity(clazz: Class<Activity>,extras: Bundle? = null,flag:Int = 0){
     val intent = Intent(this,clazz)
     intent.addFlags(flag)
@@ -155,5 +157,3 @@ fun <Activity>Context.startActivity(clazz: Class<Activity>,extras: Bundle? = nul
     }
     startActivity(intent)
 }
-
-fun Context.getDrawabler(@DrawableRes id:Int) = ContextCompat.getDrawable(this,id);

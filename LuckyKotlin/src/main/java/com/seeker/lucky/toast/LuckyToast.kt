@@ -11,7 +11,7 @@ import android.widget.Toast
  *@date    2018/12/12/012  16:40
  *@describe 发送安全的Toast提示
  */
-object ToastCompat {
+object LuckyToast {
 
     @JvmOverloads//添加此注释方法参数会有默认值，否则三个参数在java中都要传
     fun makeToast(context: Context,msg:CharSequence?,duration:Int = Toast.LENGTH_SHORT){

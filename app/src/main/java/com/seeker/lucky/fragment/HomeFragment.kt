@@ -1,7 +1,9 @@
 package com.seeker.lucky.fragment
 
+import android.view.View
 import com.seeker.lucky.R
 import com.seeker.lucky.app.LuckyFragment
+import com.seeker.lucky.log.LuckyLogger
 import kotlinx.android.synthetic.main.fragment_tab.*
 
 /**
@@ -11,17 +13,20 @@ import kotlinx.android.synthetic.main.fragment_tab.*
  */
 class HomeFragment : LuckyFragment(){
 
+    private val TAG = HomeFragment::class.java.simpleName
+
     override fun layoutResId(): Int = R.layout.fragment_tab
 
     override fun onUIVisible() {
         fragment_text.text = "首页"
+        LuckyLogger.v(TAG,"onUIVisible() called...")
     }
 
     override fun onUIInVisible() {
-
+        LuckyLogger.v(TAG,"onUIInVisible() called...")
     }
 
-    override fun todoWork() {
-
+    override fun onViewCreated(contentView: View) {
+        LuckyLogger.v(TAG,"onViewCreated() called...")
     }
 }

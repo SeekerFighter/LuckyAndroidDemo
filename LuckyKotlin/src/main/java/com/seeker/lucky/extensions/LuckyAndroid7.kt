@@ -1,5 +1,5 @@
 @file:JvmMultifileClass
-@file:JvmName("Android7Kt")
+@file:JvmName("LuckyAndroid7")
 
 package com.seeker.lucky.extensions
 

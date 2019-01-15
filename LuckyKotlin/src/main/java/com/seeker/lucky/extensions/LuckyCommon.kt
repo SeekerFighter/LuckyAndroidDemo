@@ -1,5 +1,5 @@
 @file:JvmMultifileClass
-@file:JvmName("OtherKt")
+@file:JvmName("LuckyCommon")
 
 package com.seeker.lucky.extensions
 
