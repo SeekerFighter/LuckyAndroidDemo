@@ -5,7 +5,6 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,12 +12,12 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Checkable;
 
 import com.seeker.lucky.R;
+import com.seeker.lucky.utils.DisplayHelper;
 
 /**
  * @author Seeker
@@ -26,9 +25,6 @@ import com.seeker.lucky.R;
  * @describe 仿ios的Switch, copy from {@link # https://github.com/zcweng/SwitchButton}
  */
 public class SwitchButton extends View implements Checkable {
-
-    private static final int DEFAULT_WIDTH = dp2pxInt(60);
-    private static final int DEFAULT_HEIGHT = dp2pxInt(36);
 
     /**
      * 动画状态：
@@ -254,17 +250,17 @@ public class SwitchButton extends View implements Checkable {
 
                 uncheckCircleColor = typedArray.getColor(R.styleable.SwitchButton_sb_uncheckCircleColor, 0XffAAAAAA);//0XffAAAAAA;
 
-                uncheckCircleWidth = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_uncheckCircleWidth, dp2pxInt(1.5f));//dp2pxInt(1.5f);
+                uncheckCircleWidth = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_uncheckCircleWidth, DisplayHelper.dp2px(context,1.5f));
 
-                uncheckCircleOffsetX = dp2px(10);
+                uncheckCircleOffsetX = DisplayHelper.dp2px(context,10);
 
-                uncheckCircleRadius = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_uncheckCircleRadius, dp2pxInt(3));//dp2px(4);
+                uncheckCircleRadius = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_uncheckCircleRadius, DisplayHelper.dp2px(context,3));
 
-                checkedLineOffsetX = checkedLineOffsetY = dp2px(4);
+                checkedLineOffsetX = checkedLineOffsetY = DisplayHelper.dp2px(context,4);
 
-                shadowRadius = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_shadowRadius, dp2pxInt(2.5f));//dp2pxInt(2.5f);
+                shadowRadius = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_shadowRadius, DisplayHelper.dp2px(context,2.5f));
 
-                shadowOffset = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_shadowOffset, dp2pxInt(1.5f));//dp2pxInt(1.5f);
+                shadowOffset = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_shadowOffset, DisplayHelper.dp2px(context,1.5f));
 
                 shadowColor = typedArray.getColor(R.styleable.SwitchButton_sb_shadowColor, 0X33000000);//0X33000000;
 
@@ -272,13 +268,13 @@ public class SwitchButton extends View implements Checkable {
 
                 trackCheckedColor = typedArray.getColor(R.styleable.SwitchButton_sb_trackCheckedColor, 0Xff51d367);//0Xff51d367;
 
-                borderWidth = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_borderWidth, dp2pxInt(0.5f));//dp2pxInt(1);
+                borderWidth = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_borderWidth, DisplayHelper.dp2px(context,0.5f));
 
                 checkLineColor = typedArray.getColor(R.styleable.SwitchButton_sb_checkLineColor, Color.WHITE);//Color.WHITE;
 
-                checkLineWidth = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_checkLineWidth, dp2pxInt(1f));//dp2pxInt(1.0f);
+                checkLineWidth = typedArray.getDimensionPixelSize(R.styleable.SwitchButton_sb_checkLineWidth, DisplayHelper.dp2px(context,1f));
 
-                checkLineLength = dp2px(6);
+                checkLineLength = DisplayHelper.dp2px(context,6);
 
                 int thumbColor = typedArray.getColor(R.styleable.SwitchButton_sb_thumbColor, Color.WHITE);//Color.WHITE;
 
@@ -330,11 +326,11 @@ public class SwitchButton extends View implements Checkable {
 
         if (widthMode == MeasureSpec.UNSPECIFIED
                 || widthMode == MeasureSpec.AT_MOST) {
-            widthMeasureSpec = MeasureSpec.makeMeasureSpec(DEFAULT_WIDTH, MeasureSpec.EXACTLY);
+            widthMeasureSpec = MeasureSpec.makeMeasureSpec(DisplayHelper.dp2px(getContext(),60), MeasureSpec.EXACTLY);
         }
         if (heightMode == MeasureSpec.UNSPECIFIED
                 || heightMode == MeasureSpec.AT_MOST) {
-            heightMeasureSpec = MeasureSpec.makeMeasureSpec(DEFAULT_HEIGHT, MeasureSpec.EXACTLY);
+            heightMeasureSpec = MeasureSpec.makeMeasureSpec(DisplayHelper.dp2px(getContext(),36), MeasureSpec.EXACTLY);
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
@@ -849,19 +845,6 @@ public class SwitchButton extends View implements Checkable {
     public interface OnCheckedChangeListener {
         void onCheckedChanged(SwitchButton view, boolean isChecked);
     }
-
-    /*******************************************************/
-    private static float dp2px(float dp) {
-        Resources r = Resources.getSystem();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
-    }
-
-    private static int dp2pxInt(float dp) {
-        return (int) dp2px(dp);
-    }
-
-    /*******************************************************/
-
 
     private Runnable postPendingDrag = new Runnable() {
         @Override

@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 
 import com.seeker.lucky.R;
 import com.seeker.lucky.utils.ColorHelper;
+import com.seeker.lucky.utils.DisplayHelper;
 
 import androidx.annotation.Nullable;
 
@@ -34,8 +35,6 @@ public class CheckedTableView extends LinearLayout {
     private static final int POSITION_MID = 1;//中间
     private static final int POSITION_RIGHT = 2;//右边
     private static final int POSITION_SINGLE = 3;
-
-    private float mDensity;
 
     private int strokeWith;//边线宽度
 
@@ -76,20 +75,17 @@ public class CheckedTableView extends LinearLayout {
     public CheckedTableView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        final DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        this.mDensity = dm.density;
-
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CheckedTableView);
 
         if (ta != null) {
             try {
-                strokeWith = ta.getDimensionPixelSize(R.styleable.CheckedTableView_tabStrokeWidth, dp2px(mDensity, 0.5f));
+                strokeWith = ta.getDimensionPixelSize(R.styleable.CheckedTableView_tabStrokeWidth, DisplayHelper.dp2px(context, 0.5f));
                 strokeColor = ta.getColor(R.styleable.CheckedTableView_tabStrokeColor, Color.parseColor("#3e7bff"));
-                cornerRadius = ta.getDimensionPixelSize(R.styleable.CheckedTableView_tabCornerRadius, dp2px(mDensity, 3.5f));
+                cornerRadius = ta.getDimensionPixelSize(R.styleable.CheckedTableView_tabCornerRadius, DisplayHelper.dp2px(context, 3.5f));
                 checkedColor = ta.getColor(R.styleable.CheckedTableView_tabCheckedColor, Color.parseColor("#3e7bff"));
                 pressedColor = ta.getColor(R.styleable.CheckedTableView_tabPressedColor, ColorHelper.lightAlpha(checkedColor,200));
                 normalColor = ta.getColor(R.styleable.CheckedTableView_tabNormalColor, Color.TRANSPARENT);
-                textSize = ta.getDimensionPixelSize(R.styleable.CheckedTableView_tabTextSize, dp2px(dm.scaledDensity, 13));
+                textSize = ta.getDimensionPixelSize(R.styleable.CheckedTableView_tabTextSize, DisplayHelper.dp2px(context, 13));
                 chars = ta.getTextArray(R.styleable.CheckedTableView_tabTextArray);
                 textCheckedColor = ta.getColor(R.styleable.CheckedTableView_tabTextCheckedColor, Color.WHITE);
                 textNormalColor = ta.getColor(R.styleable.CheckedTableView_tabTextNormalColor,checkedColor);
@@ -194,7 +190,7 @@ public class CheckedTableView extends LinearLayout {
         ctv.setTextAlignment(TEXT_ALIGNMENT_CENTER);
         ctv.setTextColor(createColorDrawable());
         ctv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
-        int padding = dp2px(mDensity, 5);
+        int padding = DisplayHelper.dp2px(getContext(), 5);
         ctv.setPadding(padding, padding, padding, padding);
         return ctv;
     }
@@ -280,13 +276,6 @@ public class CheckedTableView extends LinearLayout {
         };
 
         return new ColorStateList(states, colors);
-    }
-
-    private int dp2px(float density, float dp) {
-        if (dp == 0) {
-            return 0;
-        }
-        return (int) (dp * density + 0.5f);
     }
 
     public void setCheckedIndex(int index) {

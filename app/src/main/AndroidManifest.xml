@@ -47,9 +47,13 @@
             android:name=".activity.DrawableHelperActivity"
             android:label="DrawableHelperDemo" />
 
-        <activity android:name=".activity.TabSegmentActivity"
-            android:label="TabSegmentDemo"
-            />
+        <activity
+            android:name=".activity.TabSegmentActivity"
+            android:label="TabSegmentDemo" />
+
+        <activity
+            android:name=".activity.LoadViewActivity"
+            android:label="LoadingViewDemo" />
 
     </application>
 
