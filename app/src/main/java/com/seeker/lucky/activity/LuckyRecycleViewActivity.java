@@ -6,11 +6,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.seeker.lucky.R;
-import com.seeker.lucky.recycleview.LuckyAnimRecycleView;
-import com.seeker.lucky.recycleview.LuckyItemToucListener;
-import com.seeker.lucky.recycleview.LuckyLinearDecoration;
-import com.seeker.lucky.recycleview.LuckyRecyleAdapter;
-import com.seeker.lucky.recycleview.LuckyViewHolder;
+import com.seeker.lucky.widget.recycleview.LuckyAnimRecycleView;
+import com.seeker.lucky.widget.recycleview.LuckyItemToucListener;
+import com.seeker.lucky.widget.recycleview.decoration.LuckyLinearDecoration;
+import com.seeker.lucky.widget.recycleview.LuckyRecyclerAdapter;
+import com.seeker.lucky.widget.recycleview.LuckyViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public class LuckyRecycleViewActivity extends AppCompatActivity {
 
         recycleView.setAdapter(adapter);
 
-        makeDatas();
+        makeData();
 
         recycleView.setOnItemClickListener(new LuckyItemToucListener.OnItemClickListener() {
             @Override
@@ -77,41 +77,36 @@ public class LuckyRecycleViewActivity extends AppCompatActivity {
         });
     }
 
-    private void makeDatas(){
+    private void makeData(){
         for (int i = 0;i<30;i++){
             datas.add(String.valueOf(i));
         }
-        adapter.notifyDataChanged();
+        adapter.notifyDataChangedWithLayoutAnim(true);
     }
 
-    private static final class DataAdapter extends LuckyRecyleAdapter<String,LuckyViewHolder>{
+    private static final class DataAdapter extends LuckyRecyclerAdapter<String> {
 
-        public DataAdapter(Context context, List<String> datas) {
-            super(context, datas);
+        public DataAdapter(Context context, List<String> data) {
+            super(context, data);
         }
 
         @Override
-        public LuckyViewHolder convertCreateViewHolder(View itemView, int viewType) {
-            return new LuckyViewHolder(itemView);
+        public void convertDataViewHolder(LuckyViewHolder viewHolder, int position) {
+            viewHolder.setText(R.id.textView,mData.get(position));
         }
 
         @Override
-        public void convertBindViewHolder(LuckyViewHolder viewHolder, int position) {
-            viewHolder.setText(R.id.textView,mDatas.get(position));
-        }
-
-        @Override
-        public int getItemChildLayoutId(int viewType) {
+        public int getItemLayoutResId(int viewType) {
             return R.layout.item_linear;
         }
 
         @Override
-        public boolean hasOverflowChild() {
+        public boolean showItemSwipeLayout() {
             return true;
         }
 
         @Override
-        public int getOverflowChildLayoutId(int viewType) {
+        public int getItemSwipeLayoutResId(int viewType) {
             return R.layout.item_linear_overflow;
         }
     }

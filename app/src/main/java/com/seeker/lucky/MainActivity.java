@@ -15,11 +15,11 @@ import com.seeker.lucky.activity.RoundImageViewActivity;
 import com.seeker.lucky.activity.SwitchButtonActivity;
 import com.seeker.lucky.activity.TabSegmentActivity;
 import com.seeker.lucky.entiy.DemoPager;
-import com.seeker.lucky.recycleview.LuckyAnimRecycleView;
-import com.seeker.lucky.recycleview.LuckyGridDecoration;
-import com.seeker.lucky.recycleview.LuckyItemToucListener;
-import com.seeker.lucky.recycleview.LuckyRecyleAdapter;
-import com.seeker.lucky.recycleview.LuckyViewHolder;
+import com.seeker.lucky.widget.recycleview.LuckyAnimRecycleView;
+import com.seeker.lucky.widget.recycleview.decoration.LuckyGridDecoration;
+import com.seeker.lucky.widget.recycleview.LuckyItemToucListener;
+import com.seeker.lucky.widget.recycleview.LuckyRecyclerAdapter;
+import com.seeker.lucky.widget.recycleview.LuckyViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         LuckyAnimRecycleView recycleView = findViewById(R.id.mainContainer);
         recycleView.setLayoutManager(new GridLayoutManager(this,SPAN_COUNT));
         recycleView.addItemDecoration(new LuckyGridDecoration(this,SPAN_COUNT));
-        final List<DemoPager> pagers = getDemoPagerDatas();
+        final List<DemoPager> pagers = getDemoPagerData();
         DemoPagerAdapter adapter = new DemoPagerAdapter(this,pagers);
         recycleView.setAdapter(adapter);
         recycleView.setOnItemClickListener(new LuckyItemToucListener.OnItemClickListener() {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private List<DemoPager> getDemoPagerDatas(){
+    private List<DemoPager> getDemoPagerData(){
         List<DemoPager> pagers = new ArrayList<>();
         pagers.add(new DemoPager("MemberView",new Intent(this,MemberViewActivity.class)));
         pagers.add(new DemoPager("LuckyRecycleView",new Intent(this,LuckyRecycleViewActivity.class)));
@@ -65,24 +65,19 @@ public class MainActivity extends AppCompatActivity {
         return pagers;
     }
 
-    private static final class DemoPagerAdapter extends LuckyRecyleAdapter<DemoPager,LuckyViewHolder>{
+    private static final class DemoPagerAdapter extends LuckyRecyclerAdapter<DemoPager> {
 
-        public DemoPagerAdapter(Context context, List<DemoPager> datas) {
-            super(context, datas);
+        public DemoPagerAdapter(Context context, List<DemoPager> data) {
+            super(context, data);
         }
 
         @Override
-        public LuckyViewHolder convertCreateViewHolder(View itemView, int viewType) {
-            return new LuckyViewHolder(itemView);
+        public void convertDataViewHolder(LuckyViewHolder viewHolder, int position) {
+            viewHolder.setText(R.id.demoTitle,mData.get(position).getDemoTitle());
         }
 
         @Override
-        public void convertBindViewHolder(LuckyViewHolder viewHolder, int position) {
-            viewHolder.setText(R.id.demoTitle,mDatas.get(position).getDemoTitle());
-        }
-
-        @Override
-        public int getItemChildLayoutId(int viewType) {
+        public int getItemLayoutResId(int viewType) {
             return R.layout.item_grid;
         }
     }

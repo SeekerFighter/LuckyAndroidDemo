@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.seeker.lucky.R;
-import com.seeker.lucky.memberview.MemberView;
-import com.seeker.lucky.memberview.delegate.OnDelegateCheckedChangeListener;
+import com.seeker.lucky.widget.memberview.MemberView;
+import com.seeker.lucky.widget.memberview.delegate.OnDelegateCheckedChangeListener;
 import com.seeker.lucky.widget.SwitchButton;
 
 import androidx.annotation.Nullable;

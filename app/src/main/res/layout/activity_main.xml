@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.seeker.lucky.recycleview.LuckyAnimRecycleView
+    <com.seeker.lucky.widget.recycleview.LuckyAnimRecycleView
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
