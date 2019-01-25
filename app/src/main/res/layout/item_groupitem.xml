@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:layout_height="70dp">
+
+    <TextView
+        android:id="@+id/headKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#5A5A5A"
+        android:text="导热系数:"/>
+
+    <EditText
+        android:id="@+id/inputEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:background="@null"
+        android:textSize="18sp"
+        android:textColor="#5A5A5A"
+        android:hint="请输入导热系数"/>
+
+</LinearLayout>

@@ -55,6 +55,10 @@
             android:name=".activity.LoadViewActivity"
             android:label="LoadingViewDemo" />
 
+        <activity
+            android:name=".activity.GroupScrollViewActivity"
+            android:label="GroupScrollViewDemo" />
+
     </application>
 
 </manifest>

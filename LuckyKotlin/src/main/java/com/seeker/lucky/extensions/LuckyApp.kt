@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.seeker.lucky.R
 import com.seeker.lucky.app.LuckyFragment
@@ -158,7 +157,7 @@ private val hideAndShow: (manager: FragmentManager, hide: LuckyFragment?, show: 
  * 显示一个dialogFragment
  */
 @JvmOverloads
-fun FragmentActivity.displayDialog(title: String? = null,
+fun FragmentManager.displayDialog(title: String? = null,
                                    message: String,
                                    themeResId: Int = R.style.dialogStyle,
                                    /**
@@ -167,7 +166,7 @@ fun FragmentActivity.displayDialog(title: String? = null,
                                    custom: (TextView, TextView, Button, Button) -> Unit = { _, _, _, _ -> Unit },
                                    onPositiveClick: (Button) -> Boolean = { true },
                                    onNegativeClick: (Button) -> Boolean = { true },
-                                   tag: String = this::class.java.simpleName) = with(this.supportFragmentManager) {
+                                   tag: String = this::class.java.simpleName) = with(this) {
     LuckyDialog().initSetting(title, message, themeResId, custom, onPositiveClick, onNegativeClick)
             .show(this, tag)
 }

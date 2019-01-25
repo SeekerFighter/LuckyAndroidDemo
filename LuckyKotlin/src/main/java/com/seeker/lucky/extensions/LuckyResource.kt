@@ -6,6 +6,7 @@ package com.seeker.lucky.extensions
 import android.content.Context
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
@@ -30,3 +31,8 @@ fun Context.findColorById(@ColorRes id:Int):Int = ContextCompat.getColor(this,id
  * 根据id获取字符串
  */
 fun Context.findStringById(@StringRes id:Int):String = getString(id)
+
+/**
+ * 根据id获取大小
+ */
+fun Context.findDimensionById(@DimenRes id:Int) = resources.getDimensionPixelSize(id)

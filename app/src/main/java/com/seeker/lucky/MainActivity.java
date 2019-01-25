@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.seeker.lucky.activity.CheckedTableViewActivity;
 import com.seeker.lucky.activity.DrawableHelperActivity;
+import com.seeker.lucky.activity.GroupScrollViewActivity;
 import com.seeker.lucky.activity.InputBoxActivity;
 import com.seeker.lucky.activity.LoadViewActivity;
 import com.seeker.lucky.activity.LuckyRecycleViewActivity;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         pagers.add(new DemoPager("DrawableHelper",new Intent(this,DrawableHelperActivity.class)));
         pagers.add(new DemoPager("TabSegment",new Intent(this,TabSegmentActivity.class)));
         pagers.add(new DemoPager("LoadingView",new Intent(this,LoadViewActivity.class)));
+        pagers.add(new DemoPager("GroupScrollView",new Intent(this,GroupScrollViewActivity.class)));
         return pagers;
     }
 

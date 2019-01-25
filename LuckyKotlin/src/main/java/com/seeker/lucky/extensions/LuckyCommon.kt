@@ -6,6 +6,8 @@ package com.seeker.lucky.extensions
 import android.os.Message
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.seeker.lucky.log.LuckyLogger
+import java.lang.StringBuilder
 
 /**
  *@author  Seeker
@@ -35,4 +37,14 @@ fun <T> String.toJavaBean(clazz: Class<T>): T? = try {
 } catch (e: Exception) {
     e.printStackTrace()
     null
+}
+
+fun <K,V> Map<K,V>.mapLog() = apply {
+    val sb = StringBuilder()
+    sb.append("Map = {\n")
+    forEach {
+        sb.append(it.key).append("-").append(it.value).append("\n")
+    }
+    sb.append("}")
+    LuckyLogger.i(msg = sb.toString())
 }
