@@ -91,68 +91,6 @@ private val hideAndShow: (manager: FragmentManager, hide: LuckyFragment?, show: 
     transaction.commit()
 }
 
-//@JvmOverloads
-//internal fun FragmentManager.displayFragmentAndIfHideCurrent(
-//        fragment: LuckyFragment,
-//        containerId: Int,
-//        tag: String = fragment.javaClass.name) = findAndModifyOpInBackStackRecord(opHandler = { op: Any ->
-//            hideAndShow(op,this,fragment,tag, containerId)
-//        },emptyHandler = { hideAndShow(this,null,fragment,tag, containerId)},
-//        errorHandler = {})
-//
-//private fun FragmentManager.findAndModifyOpInBackStackRecord(backStackIndex: Int = -1,
-//                                                             opHandler:(Any)->Boolean,
-//                                                             emptyHandler:()->Unit,
-//                                                             errorHandler:()->Unit){
-//    val backStackCount = backStackEntryCount
-//    var fragmentIndex = backStackIndex
-//    if (backStackCount > 0 && fragmentIndex < backStackCount && fragmentIndex > -backStackCount){
-//        if (fragmentIndex < 0){
-//            fragmentIndex += backStackCount
-//        }
-//       try {
-//           val backStackEntry = getBackStackEntryAt(fragmentIndex)
-//           val opsFiled = backStackEntry.javaClass.getDeclaredField("mOps")
-//           opsFiled.isAccessible = true
-//           val opsAny = opsFiled.get(backStackEntry)
-//           (opsAny as List<*>).let {
-//               for (op in it){
-//                   if (opHandler(op!!)){
-//                       break
-//                   }
-//               }
-//           }
-//       }catch (ignore:Exception){
-//           errorHandler()
-//       }
-//    }else{
-//        emptyHandler()
-//    }
-//}
-//
-//private fun hideAndShow(op:Any,manager: FragmentManager,show: LuckyFragment, tag: String, containerId: Int):Boolean = try {
-//    val cmdFiled = op.javaClass.getDeclaredField("cmd")
-//    cmdFiled.isAccessible = true
-//    val cmd = cmdFiled.get(op) as Int
-//    var result = false
-//    if (cmd == 1 || cmd == 4){
-//        val oldFragmentField = op.javaClass.getDeclaredField("fragment")
-//        oldFragmentField.isAccessible = true
-//        val fragmentAny = oldFragmentField.get(op)
-//        (fragmentAny as LuckyFragment).let {
-//            if (it.same(show)) {
-//                it.echoShowTodoWork()
-//            } else {
-//                hideAndShow(manager, it, show, tag, containerId)
-//            }
-//        }
-//        result = true
-//    }
-//    result
-//}catch (ignore:Exception){
-//    false
-//}
-
 /**
  * 显示一个dialogFragment
  */

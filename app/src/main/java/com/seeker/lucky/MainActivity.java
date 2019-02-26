@@ -2,9 +2,9 @@ package com.seeker.lucky;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
+import com.seeker.lucky.activity.AdaptActivity;
 import com.seeker.lucky.activity.CheckedTableViewActivity;
 import com.seeker.lucky.activity.DrawableHelperActivity;
 import com.seeker.lucky.activity.GroupScrollViewActivity;
@@ -15,29 +15,33 @@ import com.seeker.lucky.activity.MemberViewActivity;
 import com.seeker.lucky.activity.RoundImageViewActivity;
 import com.seeker.lucky.activity.SwitchButtonActivity;
 import com.seeker.lucky.activity.TabSegmentActivity;
+import com.seeker.lucky.app.LuckyFragmentActivity;
 import com.seeker.lucky.entiy.DemoPager;
 import com.seeker.lucky.widget.recycleview.LuckyAnimRecycleView;
-import com.seeker.lucky.widget.recycleview.decoration.LuckyGridDecoration;
 import com.seeker.lucky.widget.recycleview.LuckyItemToucListener;
 import com.seeker.lucky.widget.recycleview.LuckyRecyclerAdapter;
 import com.seeker.lucky.widget.recycleview.LuckyViewHolder;
+import com.seeker.lucky.widget.recycleview.decoration.LuckyGridDecoration;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends LuckyFragmentActivity {
 
     private static final int SPAN_COUNT = 3;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int layoutResId() {
+        return R.layout.activity_main;
+    }
 
+    @Override
+    public void onViewCreated(@NotNull View contentView) {
         LuckyAnimRecycleView recycleView = findViewById(R.id.mainContainer);
         recycleView.setLayoutManager(new GridLayoutManager(this,SPAN_COUNT));
         recycleView.addItemDecoration(new LuckyGridDecoration(this,SPAN_COUNT));
@@ -64,12 +68,13 @@ public class MainActivity extends AppCompatActivity {
         pagers.add(new DemoPager("TabSegment",new Intent(this,TabSegmentActivity.class)));
         pagers.add(new DemoPager("LoadingView",new Intent(this,LoadViewActivity.class)));
         pagers.add(new DemoPager("GroupScrollView",new Intent(this,GroupScrollViewActivity.class)));
+        pagers.add(new DemoPager("AdaptActivity",new Intent(this,AdaptActivity.class)));
         return pagers;
     }
 
     private static final class DemoPagerAdapter extends LuckyRecyclerAdapter<DemoPager> {
 
-        public DemoPagerAdapter(Context context, List<DemoPager> data) {
+        DemoPagerAdapter(Context context, List<DemoPager> data) {
             super(context, data);
         }
 
@@ -83,6 +88,5 @@ public class MainActivity extends AppCompatActivity {
             return R.layout.item_grid;
         }
     }
-
 
 }

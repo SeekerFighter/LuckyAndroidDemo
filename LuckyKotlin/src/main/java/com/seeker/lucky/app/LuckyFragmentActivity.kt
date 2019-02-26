@@ -1,9 +1,11 @@
 package com.seeker.lucky.app
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.view.LayoutInflater
+import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.collection.SparseArrayCompat
@@ -40,8 +42,10 @@ abstract class LuckyFragmentActivity : AppCompatActivity(), LuckyUIHelper {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
     }
 
+    @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        forceScreenPortrait()
         mActivity = this
         init()
         val view = LayoutInflater.from(this).inflate(layoutResId(),null);
@@ -52,6 +56,13 @@ abstract class LuckyFragmentActivity : AppCompatActivity(), LuckyUIHelper {
     private fun init() {
         mPendingFragmentMessages.clear()
         mNextCandidateWhatIndex = 0
+    }
+
+    private fun forceScreenPortrait(){
+        if (isForceScreenPortrait()
+                && requestedOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
     }
 
     override fun onResume() {
@@ -100,6 +111,11 @@ abstract class LuckyFragmentActivity : AppCompatActivity(), LuckyUIHelper {
             }
         }
     }
+
+    /**
+     * 可重写，是否强制屏幕竖屏
+     */
+    open fun isForceScreenPortrait() = true
 
     /**
      * 来自fragment的handler消息发送

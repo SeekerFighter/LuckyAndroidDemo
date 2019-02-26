@@ -1,8 +1,11 @@
 package com.seeker.lucky.fragment
 
+import android.os.Build
 import android.view.View
+import androidx.annotation.RequiresApi
 import com.seeker.lucky.R
 import com.seeker.lucky.app.LuckyFragment
+import com.seeker.lucky.extensions.findDrawableById
 import com.seeker.lucky.log.LuckyLogger
 import kotlinx.android.synthetic.main.fragment_tab.*
 
@@ -17,8 +20,10 @@ class DataFragment : LuckyFragment(){
 
     override fun layoutResId(): Int = R.layout.fragment_tab
 
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
     override fun onUIVisible() {
         fragment_text.text = "数据"
+        fragment_text.background = mHostActivity?.findDrawableById(android.R.color.holo_blue_bright)
         LuckyLogger.v(TAG,"onUIVisible() called...")
     }
 

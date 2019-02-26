@@ -38,8 +38,10 @@ abstract class LuckyFragment : Fragment(), LuckyUIHelper {
         mWho = System.nanoTime()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(layoutResId(), container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?{
+        super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(layoutResId(), container, false)
+    }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)

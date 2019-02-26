@@ -6,11 +6,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.seeker.lucky.R;
+import com.seeker.lucky.app.LuckyFragmentActivity;
 import com.seeker.lucky.widget.recycleview.LuckyAnimRecycleView;
 import com.seeker.lucky.widget.recycleview.LuckyItemToucListener;
 import com.seeker.lucky.widget.recycleview.decoration.LuckyLinearDecoration;
 import com.seeker.lucky.widget.recycleview.LuckyRecyclerAdapter;
 import com.seeker.lucky.widget.recycleview.LuckyViewHolder;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * @author Seeker
  * @date 2019/1/9/009  16:29
  */
-public class LuckyRecycleViewActivity extends AppCompatActivity {
+public class LuckyRecycleViewActivity extends LuckyFragmentActivity {
 
     private LuckyAnimRecycleView recycleView;
 
@@ -32,11 +35,20 @@ public class LuckyRecycleViewActivity extends AppCompatActivity {
 
     private List<String> datas = new ArrayList<>();
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.lucky_recycleview_layout);
+    private void makeData(){
+        for (int i = 0;i<30;i++){
+            datas.add(String.valueOf(i));
+        }
+        adapter.notifyDataChangedWithLayoutAnim(true);
+    }
 
+    @Override
+    public int layoutResId() {
+        return R.layout.lucky_recycleview_layout;
+    }
+
+    @Override
+    public void onViewCreated(@NotNull View contentView) {
         recycleView = findViewById(R.id.luckyAnimRecycleView);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
         recycleView.addItemDecoration(new LuckyLinearDecoration(this,LuckyLinearDecoration.VERTICAL));
@@ -75,13 +87,6 @@ public class LuckyRecycleViewActivity extends AppCompatActivity {
                 return true;
             }
         });
-    }
-
-    private void makeData(){
-        for (int i = 0;i<30;i++){
-            datas.add(String.valueOf(i));
-        }
-        adapter.notifyDataChangedWithLayoutAnim(true);
     }
 
     private static final class DataAdapter extends LuckyRecyclerAdapter<String> {

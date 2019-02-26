@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<Button-->
+            <!--android:layout_width="240dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--android:text="Btn1(240dp,100dp)"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="30sp"/>-->
+
+        <!--<Button-->
+            <!--android:layout_width="240dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="#0d0"-->
+            <!--android:text="Btn2(240dp,100dp)"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="30sp"/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<Button-->
+        <!--android:layout_width="480dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:background="#fd0"-->
+        <!--android:text="Btn3(480dp,100dp)"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textSize="25sp"/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="360dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:background="#d00"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:text="Btn4(360dp,100dp,center_horizontal)"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textSize="25sp"/>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="360dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@color/colorPrimary"-->
+            <!--android:gravity="center"-->
+            <!--android:text="W-36dp(total:480dp)"-->
+            <!--android:textColor="#0d0"-->
+            <!--android:textSize="20sp"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="120dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="#d0a"-->
+            <!--android:gravity="center"-->
+            <!--android:text="W-120dp"-->
+            <!--android:textColor="#0d0"-->
+            <!--android:textSize="20sp"/>-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#aef"-->
+            <!--android:gravity="center"-->
+            <!--android:text="W-160dp"-->
+            <!--android:textColor="#0d0"-->
+            <!--android:textSize="20sp"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#acf"-->
+            <!--android:gravity="center"-->
+            <!--android:text="W-200dp"-->
+            <!--android:textColor="#0d0"-->
+            <!--android:textSize="20sp"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="120dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#fcf"-->
+            <!--android:gravity="center"-->
+            <!--android:text="W-120dp"-->
+            <!--android:textColor="#0d0"-->
+            <!--android:textSize="20sp"/>-->
+    <!--</LinearLayout>-->
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.seeker.lucky.fragment.HomeFragment"
+        android:layout_width="480dp"
+        android:layout_height="220dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <fragment
+            android:id="@+id/DataFragment"
+            android:name="com.seeker.lucky.fragment.DataFragment"
+            android:layout_width="360dp"
+            android:layout_height="100dp"/>
+
+        <fragment
+            android:id="@+id/ReportFragment"
+            android:name="com.seeker.lucky.fragment.ReportFragment"
+            android:layout_width="120dp"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/SelfFragment"
+        android:name="com.seeker.lucky.fragment.SelfFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

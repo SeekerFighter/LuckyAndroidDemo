@@ -20,19 +20,20 @@ import androidx.core.content.ContextCompat
 /**
  * 根据图片id获取drawable
  */
-fun Context.findDrawableById(@DrawableRes id:Int):Drawable? = ContextCompat.getDrawable(this,id)
+fun Context.findDrawableById(@DrawableRes id:Int):Drawable? = ContextCompat.getDrawable(applicationContext,id)
 
 /**
  * 根据id获取颜色值
  */
-fun Context.findColorById(@ColorRes id:Int):Int = ContextCompat.getColor(this,id)
+fun Context.findColorById(@ColorRes id:Int):Int = ContextCompat.getColor(applicationContext,id)
 
 /**
  * 根据id获取字符串
  */
-fun Context.findStringById(@StringRes id:Int):String = getString(id)
+fun Context.findStringById(@StringRes id:Int):String = applicationContext.getString(id)
 
 /**
  * 根据id获取大小
  */
-fun Context.findDimensionById(@DimenRes id:Int) = resources.getDimensionPixelSize(id)
+fun Context.findDimensionById(@DimenRes id:Int) = applicationContext.resources.getDimensionPixelSize(id)
+

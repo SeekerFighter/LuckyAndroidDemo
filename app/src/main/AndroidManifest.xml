@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.seeker.lucky">
 
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -58,6 +66,14 @@
         <activity
             android:name=".activity.GroupScrollViewActivity"
             android:label="GroupScrollViewDemo" />
+
+        <activity android:name=".activity.AdaptActivity"
+            android:label="自适配大小" >
+
+            <meta-data android:name="design_width" android:value="480"/>
+            <meta-data android:name="design_height" android:value="640"/>
+
+        </activity>
 
     </application>
 
