@@ -9,7 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.utils.ColorHelper;
 
 /**

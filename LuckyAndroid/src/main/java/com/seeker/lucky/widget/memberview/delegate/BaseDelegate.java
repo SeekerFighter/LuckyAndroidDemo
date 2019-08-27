@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.widget.memberview.MemberView;
 
 /**

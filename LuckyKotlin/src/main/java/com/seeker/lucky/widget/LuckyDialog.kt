@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import com.seeker.lucky.R
+import com.seeker.luckyk.R
 import kotlinx.android.synthetic.main.lucky_dialog_layout.*
 
 /**

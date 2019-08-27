@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.seeker.lucky.R
+import com.seeker.luckyk.R
 import com.seeker.lucky.app.LuckyFragment
 import com.seeker.lucky.app.LuckyFragmentActivity
 import com.seeker.lucky.widget.LuckyDialog

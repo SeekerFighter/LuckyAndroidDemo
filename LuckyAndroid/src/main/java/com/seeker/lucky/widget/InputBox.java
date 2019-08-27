@@ -14,7 +14,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 
 import androidx.appcompat.widget.AppCompatEditText;
 

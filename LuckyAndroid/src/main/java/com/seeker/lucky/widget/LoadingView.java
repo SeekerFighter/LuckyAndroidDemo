@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.utils.DisplayHelper;
 
 import androidx.annotation.NonNull;

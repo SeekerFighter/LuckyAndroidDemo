@@ -29,7 +29,7 @@ dependencies {
     api rootProject.ext.dependencies["appcompat-androidx"]
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //kotlin协程代码库
-    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.27.0-eap13'
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
     //Retrofit相关
     api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     api 'com.squareup.retrofit2:retrofit:2.3.0'

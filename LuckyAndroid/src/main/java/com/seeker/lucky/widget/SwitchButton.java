@@ -16,7 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Checkable;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.utils.DisplayHelper;
 
 /**

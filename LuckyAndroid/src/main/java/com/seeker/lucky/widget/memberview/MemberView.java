@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.widget.memberview.delegate.CompoundButtonDelegate;
 import com.seeker.lucky.widget.memberview.delegate.CustomDelegate;
 import com.seeker.lucky.widget.memberview.delegate.ImageDelegate;

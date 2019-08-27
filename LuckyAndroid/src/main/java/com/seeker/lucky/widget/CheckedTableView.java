@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.utils.ColorHelper;
 import com.seeker.lucky.utils.DisplayHelper;
 

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.GridLayoutAnimationController;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;

@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 import com.seeker.lucky.widget.memberview.MemberView;
 import com.seeker.lucky.widget.memberview.drawable.DrawableFactory;
 

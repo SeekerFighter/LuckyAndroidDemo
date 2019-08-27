@@ -22,7 +22,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.seeker.lucky.R;
+import com.seeker.luckya.R;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.widget.AppCompatImageView;
